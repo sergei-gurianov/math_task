@@ -70,7 +70,7 @@ Service uses **deepseek-chat** model. If you use another model you can modify it
       -H 'accept: application/json' \
       -H 'Content-Type: application/json' \
       -d '{
-      "question": "Чему равен корень из 100",
+      "question": "Чему равен корень из 100?"
     }'
     ```
     ```json
@@ -81,7 +81,7 @@ Service uses **deepseek-chat** model. If you use another model you can modify it
 
     ```bash
     curl -X 'POST' \
-      'http://127.0.0.1:8008/math_questions' \
+      'http://0.0.0.0:8008/math_questions' \
       -H 'accept: application/json' \
       -H 'Content-Type: application/json' \
       -d '{
@@ -96,7 +96,7 @@ Service uses **deepseek-chat** model. If you use another model you can modify it
   
     ```bash
     curl -X 'POST' \
-      'http://127.0.0.1:8008/math_questions' \
+      'http://0.0.0.0:8008/math_questions' \
       -H 'accept: application/json' \
       -H 'Content-Type: application/json' \
       -d '{

@@ -58,16 +58,19 @@ Service uses **deepseek-chat** model. If you use another model you can modify it
     ```bash
     sh run.sh
     ```
+- by default setvice will run on http://0.0.0.0:8008
+- the enpoint url is http://0.0.0.0:8008/math_questions
+- the UI [Link](http://0.0.0.0:8008/docs)
 
 4. Test some requests
 
     ```bash
     curl -X 'POST' \
-        'http://0.0.0.0:8008/math_questions' \
-        -H 'accept: application/json' \
-        -H 'Content-Type: application/json' \
-        -d '{
-        "question": "Чему равен корень из 100",
+      'http://0.0.0.0:8008/math_questions' \
+      -H 'accept: application/json' \
+      -H 'Content-Type: application/json' \
+      -d '{
+      "question": "Чему равен корень из 100",
     }'
     ```
     ```json

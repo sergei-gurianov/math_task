@@ -11,6 +11,7 @@ The answer then is calculated using Python functions.
 
 If the question is not in predefined topic list, the answer is gathered directly from the respone of LLM model.
 
+
 ## Architecture Overview
 
 1. **FastAPI** controls requests.
@@ -18,6 +19,21 @@ If the question is not in predefined topic list, the answer is gathered directly
 3. The final answer is JSON-format (`{"answer": ... }`).
 4. The service itself runs in isolated **Docker** container.
 
+
+## Project tree
+```
+📦 
+├─ Dockerfile                   # Instructions for the docker image
+├─ README.md                    # Documentation
+├─ requirements.txt             # Package dependencies
+├─ run.sh                       # Docker container run script
+└─ src
+   ├─ base.py                   # Base solver class
+   ├─ llm.py                    # LLM workaround
+   ├─ main.py                   # Main script with request handling and FastAPI app
+   ├─ models.py                 # Pydantic schemas
+   └─ solvers.py                # Custom solvers
+```
 
 ## Installation & Setup
 
@@ -43,12 +59,7 @@ Service uses **deepseek-chat** model. If you use another model you can modify it
     sh run.sh
     ```
 
-- By default the port is 8008. 
-- After successfull built the service will be running on http://0.0.0.0:$8008
-- The endpoing url - http://0.0.0.0:8008/math_questions
-- The UI - [Link](http://0.0.0.0:8008/docs)
-
-## Testing
+4. Test some requests
 
     ```bash
     curl -X 'POST' \
